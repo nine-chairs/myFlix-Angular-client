@@ -34,11 +34,10 @@ export class FetchApiDataService {
    * @returns data of the user in JSON format
    */
   public userLogin(userDetails: any): Observable<any> {
-    return this.http
-      .post(apiUrl + 'login', userDetails)
-      .pipe(
-        catchError(this.handleError)
-      );
+    console.log(userDetails);
+    return this.http.post(apiUrl + 'login', userDetails).pipe(
+      catchError(this.handleError)
+    );
   }
 
   /**
