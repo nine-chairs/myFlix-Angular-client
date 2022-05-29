@@ -1,10 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router'
 import { MatDialogRef } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,35 +12,36 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UserLoginFormComponent implements OnInit {
 
-  @Input() userCredentials = { Username: '', Password: '' };
+  @Input() userData = { Username: '', Password: '' };
 
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar,
-    public router: Router,
+    public router: Router
   ) { }
 
   ngOnInit(): void {
   }
 
-  // This is the function responsible for sending the form inputs to the backend
+  /**
+   * sends form inputs for user login to backend via fetchApiData Service
+   */
   loginUser(): void {
-    this.fetchApiData.userLogin(this.userCredentials).subscribe((response) => {
-      localStorage.setItem('user', response.user.Username);
-      localStorage.setItem('token', response.token);
-      this.dialogRef.close();
-      console.log(response);
-      this.snackBar.open('You have logged in!', 'OK', {
-        duration: 2000
-      });
+    this.fetchApiData.userLogin(this.userData).subscribe((result) => {
+      this.dialogRef.close(); // Close the modal on success
+      console.log(result);
+      // Add token and username to local Storage
+      localStorage.setItem('token', result.token);
+      localStorage.setItem('user', result.user.Username);
+
+      // Redirect to movies (main) page
       this.router.navigate(['movies']);
-    }, (response) => {
-      console.log(response);
-      this.snackBar.open(response, 'OK', {
+    }, (result) => {
+      console.log(result);
+      this.snackBar.open(result, 'OK', {
         duration: 2000
       });
     });
   }
-
 }
