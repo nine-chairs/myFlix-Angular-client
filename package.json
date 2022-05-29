@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng deploy --base-href=/myFlix-Angular-client/ --repo=https://github.com/nine-chairs/myFlix-Angular-client.git --no-silent"
   },
   "private": true,
   "dependencies": {
