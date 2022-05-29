@@ -30,7 +30,21 @@ $myFlix-Angular-client-theme: mat.define-light-theme((color: (primary: $myFlix-A
 @include mat.all-component-themes($myFlix-Angular-client-theme);
 
 /* You can add global styles to this file, and also import other style files */
-$backgroundColor: #f8f9fa;
+$backgroundColor: #ffffff;
+
+
+@font-face {
+  font-family: Nanum;
+  src: url(assets/fonts/NanumGothicCoding-Regular.ttf) format('truetype');
+}
+
+
+.Nanum {
+  font-family: Nanum;
+  font-size: 20px;
+}
+
+
 
 html,
 body {

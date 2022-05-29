@@ -85,12 +85,12 @@ export class MovieCardComponent implements OnInit {
   * @param bio
   * @param birthday
   */
-  openDirectorDialog(name: string, bio: string, birthday: Date): void {
+  openDirectorDialog(name: string, bio: string, birth: string): void {
     this.dialog.open(DirectorComponent, {
       data: {
         Name: name,
         Bio: bio,
-        Birthday: birthday,
+        Birth: birth,
       },
       // Assign dialog width
       width: '500px'

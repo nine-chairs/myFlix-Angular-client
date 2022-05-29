@@ -4,8 +4,7 @@
     <mat-card-header>
       <mat-card-title>{{movie.Title}}</mat-card-title>
       <mat-card-subtitle>Directed by:
-        <button mat-button
-          (click)="openDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birthday)"
+        <button mat-button (click)="openDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birth)"
           color="primary">
           {{movie.Director.Name}}
         </button>
