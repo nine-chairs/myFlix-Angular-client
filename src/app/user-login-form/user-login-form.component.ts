@@ -25,8 +25,11 @@ export class UserLoginFormComponent implements OnInit {
   }
 
   /**
-   * sends form inputs for user login to backend via fetchApiData Service
-   */
+  * logs the user in
+  * displays message telling the user to have successfully logged in
+  * navigates to movies page
+  * @function loginUser
+  */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
       this.dialogRef.close(); // Close the modal on success

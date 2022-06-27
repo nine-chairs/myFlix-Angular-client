@@ -30,7 +30,6 @@ export class MovieCardComponent implements OnInit {
 
   /**
    * Gets movies from api call and sets the movies state to return JSON file
-   * @returns array holding movies objects
    * @function getAllMovies
    */
   getMovies(): void {
@@ -43,7 +42,6 @@ export class MovieCardComponent implements OnInit {
 
   /**
    * Gets favorite movies from api call and sets the favorite movies variable to return JSON file
-   * @returns array holding ids of user's favorite movies
    * @function getFavoriteMovies
    */
   getFavoriteMovies(): void {

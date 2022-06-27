@@ -26,6 +26,7 @@ export class EditProfileComponent implements OnInit {
 
   /**
    * allows user to edit their data, such as Username, password, email, and birthday
+   * @function editUser
    */
   editUser(): void {
     console.log(this.userData);

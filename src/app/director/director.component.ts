@@ -6,7 +6,13 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './director.component.html',
   styleUrls: ['./director.component.scss']
 })
+
 export class DirectorComponent implements OnInit {
+  /**
+   * Injects data from MovieCardComponent into DirectorComponent using the MAT_DIALOG_DATA injection token.
+   * The data becomes a property on the class and is available to be output in the template.
+   * @param data 
+   */
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
