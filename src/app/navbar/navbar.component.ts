@@ -16,23 +16,21 @@ export class NavbarComponent implements OnInit {
   }
 
   /**
-   * routes user to the movies page
+   * navigates to movies (main) page
    */
   goToMovies(): void {
     this.router.navigate(['movies']);
   }
 
   /**
-   * routes user to the profile page
+   * navigates to user profile
    */
   goToProfile(): void {
     this.router.navigate(['profile']);
   }
 
   /**
-   * logs a user out
-   * clears the localStorage
-   * re-routes to the welcome screen
+   * logs out users, clears local storage to reset token and user
    */
   logOut(): void {
     localStorage.clear();

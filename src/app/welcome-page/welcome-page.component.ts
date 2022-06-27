@@ -20,7 +20,7 @@ export class WelcomePageComponent implements OnInit {
   }
 
   /**
-   * opens dialog to display the UserRegistrationComponent
+   * opens the user registration dialog when signup button is clicked
    */
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
@@ -30,7 +30,7 @@ export class WelcomePageComponent implements OnInit {
   }
 
   /**
-   * opens dialog to display the UserLoginComponent
+   * opens the user login dialog when login button is clicked
    */
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {
